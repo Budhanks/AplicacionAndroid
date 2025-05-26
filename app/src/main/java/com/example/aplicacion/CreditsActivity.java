@@ -11,15 +11,15 @@ public class CreditsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_credits); // Establece el layout de créditos
+        setContentView(R.layout.activity_credits); 
 
         Button btnBackToMain = findViewById(R.id.btnBackToMainFromCredits);
 
-        // Configura el botón para regresar a la pantalla principal
+        
         btnBackToMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); // Cierra esta Activity y regresa a la anterior en la pila (MainActivity)
+                finish(); 
             }
         });
     }
