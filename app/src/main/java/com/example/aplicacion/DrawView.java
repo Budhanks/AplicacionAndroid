@@ -16,7 +16,6 @@ import java.util.List;
 
 public class DrawView extends View {
 
-    // Clase interna para almacenar cada trazo con su color específico
     private static class Stroke {
         Path path;  
         int color;  
@@ -47,31 +46,16 @@ public class DrawView extends View {
         currentDrawingColor = Color.BLACK; 
     }
 
-    /**
-     * Establece el color para los NUEVOS trazos.
-     * Los trazos ya dibujados no cambian de color.
-     * @param color El nuevo color (ej. Color.RED, Color.BLUE).
-     */
     public void setPaintColor(int color) {
         currentDrawingColor = color;
     }
 
-    /**
-     * Borra todos los trazos en la pantalla.
-     * Limpia la lista de trazos y el trazo actual, luego solicita un redibujado.
-     */
     public void clearDrawing() {
         strokes.clear();     
         currentPath = null;  
         invalidate();        
     }
 
-    /**
-     * Establece la imagen a dibujar en el fondo del lienzo.
-     * La imagen se escalará para ajustarse al ancho de la vista manteniendo su relación de aspecto,
-     * y se centrará verticalmente.
-     * @param bitmap La imagen Bitmap a cargar.
-     */
     public void setLoadedImage(Bitmap bitmap) {
         this.loadedImage = bitmap;
         if (loadedImage != null) {
@@ -155,7 +139,7 @@ public class DrawView extends View {
                 break;
         }
 
-        invalidate(); // Solicita un redibujado de la vista para mostrar el trazo actualizado
-        return true; // Indica que hemos manejado este evento
+        invalidate(); 
+        return true; 
     }
 }
